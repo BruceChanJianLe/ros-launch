@@ -15,6 +15,27 @@ There is two option in delaying a node from running in launch file.
 - Reference: [link_rosanswer](https://answers.ros.org/question/233353/set-delay-between-starting-nodes-within-launch-file/)
 - Reference: [link_roswiki](http://wiki.ros.org/timed_roslaunch)
 
+## \<rosparam\> tag
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+    <arg name="my_env_var" default="$(optenv MY_ENV_VAR '')"/>
+
+    <group if="$(eval my_env_var == 'Successfully setup!')">
+        <rosparam param="debug">true</rosparam>
+    </group>
+
+    <group unless="$(eval my_env_var == 'Successfully setup!')">
+        <rosparam param="debug">false</rosparam>
+    </group>
+
+</launch>
+```
+For more information, please visit https://wiki.ros.org/roslaunch/XML/rosparam.
+
 ## \<env\> tag
 
 The <env> tag allows you to set environment variables on nodes that are launched. This tag may only be used within the scope of a <launch>, <include>, <node> or <machine> tag. When it is used inside of a <launch> tag, the <env> tag only applies to nodes declared after.
