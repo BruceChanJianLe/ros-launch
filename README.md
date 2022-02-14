@@ -22,3 +22,7 @@ The <env> tag allows you to set environment variables on nodes that are launched
 NOTE: Values set using the <env> tag will not be seen by $(env ...), so the <env> tag cannot be used to parametrize launch files.
   
  - Reference: [link1](http://ros.informatik.uni-freiburg.de/roswiki/roslaunch(2f)XML(2f)env.html)
+  
+## Env Hooks
+  
+For more information on using environment hooks, please check out this repository. https://github.com/BruceChanJianLe/ros-env-hooks
