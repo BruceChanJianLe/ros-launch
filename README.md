@@ -47,3 +47,15 @@ NOTE: Values set using the <env> tag will not be seen by $(env ...), so the <env
 ## Env Hooks
   
 For more information on using environment hooks, please check out this repository. https://github.com/BruceChanJianLe/ros-env-hooks
+
+## ROS Service
+```xml
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- remove pallet from the scene -->
+  <node pkg="rosservice" type="rosservice" name="remove_pallet" args="call --wait /gazebo/delete_model 'model_name: 'aws_robomaker_warehouse_PalletJackB_01_001''" />
+
+</launch>
+```
