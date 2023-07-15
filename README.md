@@ -59,3 +59,20 @@ For more information on using environment hooks, please check out this repositor
 
 </launch>
 ```
+
+## \<include\> tag
+
+This launches another launch file.
+
+```xml
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- launch another launch file -->
+  <include file="$(find pkg-name)/path/filename.launch"/>
+
+</launch>
+```
+
+- Reference: https://wiki.ros.org/roslaunch/XML/include
